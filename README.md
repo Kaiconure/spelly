@@ -23,7 +23,7 @@ Spelly outputs spells in alphabetical order.
 
 Running `//spelly check boost` to see which "boost" spells my WHM still needs to learn:
 
-![](C:\Users\leile\Dropbox\My Documents\Windower4\addons\spelly\content\spelly_check.png)
+![](./content/spelly_check.png)
 
 Spelly *only* looks at spells that are learnable by your current main/sub job.
 
@@ -31,6 +31,6 @@ Spelly *only* looks at spells that are learnable by your current main/sub job.
 
 Running `//spelly known boost` to see which "boost" spells my WHM already knows:
 
-![](C:\Users\leile\Dropbox\My Documents\Windower4\addons\spelly\content\spelly_known.png)
+![](./content/spelly_known.png)
 
 Spelly *only* looks at spells that are usable by your current main/sub job.
