@@ -95,3 +95,26 @@ function arrayIndexOfStrI(array, search)
         end
     end
 end
+
+---------------------------------------------------------------------
+-- Given an arguments array, find and remove specified argument. If
+-- the withValue parameter is set, then the argument immediately
+-- following the search value will be extracted and removed.
+function extractArgumentByName(args, arg, withValue)
+    -- Check for a spell type filter
+    local value = nil
+    local i = arrayIndexOfStrI(args, arg)
+    if i then
+        table.remove(args, i)
+        if withValue then
+            if args[i] then
+                value = args[i]
+                table.remove(args, i)
+            end
+        else
+            value = true
+        end
+    end
+
+    return value
+end

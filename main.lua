@@ -28,7 +28,7 @@ function sortSpells(spells)
     end)
 end
 
-function spellCheck(check)
+function spellCheck(check, spellType)
     local known = {}
     local unknown = {}
 
@@ -43,12 +43,16 @@ function spellCheck(check)
     local spell_recasts = windower.ffxi.get_spell_recasts()
     local known_spells = windower.ffxi.get_spells()
 
+    spellType = spellType and string.lower(spellType)
     check = string.format('^%s', check)
     for id, spell in pairs(resources.spells) do
         local name = string.lower(spell.name)
 
         -- Check if the spell matches the check string
-        if string.match(name, check) then
+        if 
+            string.match(name, check) and
+            (not spellType or spellType == string.lower(spell.type)) 
+        then
             -- Check if the spell can be learned by the current job/sub
             if 
                 (spell.levels[main_job_id] and spell.levels[main_job_id] <= main_job_level) or

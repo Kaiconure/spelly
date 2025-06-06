@@ -6,12 +6,25 @@ Spelly is an addon that lets you track known and learnable spells based on your 
 
 The most obvious scenario here is checking if you've got a certain set of spells before heading out to meet a party. This is *also* very handy when viewing a long list of trust ciphers from an event NPC, where you want to be sure you don't get something you've already learned.
 
+You can get the latest release from the [Spelly GitHub](https://github.com/Kaiconure/Spelly) page.
+
 ### Usage
 
 Spelly has some very simple commands for you to run:
 
-- `check <pattern>` - Identifies unknown (but currently learnable) spells matching the specified pattern. For example, run `//spelly check fire` to show any fire spells you can still learn.
-- `known <pattern>` - Identifies known and usable spells matching the specified pattern. For example, run `//spelly known fire` to show all fire spells you already know and can use.
+- `check [-type <type>] <pattern>` - Identifies unknown (but currently learnable) spells matching the specified pattern. For example, run `//spelly check fire` to show any fire spells you can still learn.
+- `known [-type <type>] <pattern>` - Identifies known and usable spells matching the specified pattern. For example, run `//spelly known fire` to show all fire spells you already know and can use.
+
+The optional *type* argument (specified with either `-type` or `-t` for short)  can be used to filter the list to only spells of a specific type. Valid types can be found in the *spells.json* file under Windower resources, but I've listed them out here for convenience:
+
+- BardSong
+- BlackMagic
+- BlueMagic
+- Geomancy
+- Ninjutsu
+- SummonerPact
+- Trust
+- WhiteMagic
 
 Spelly patterns are "starts with" sequences, so any matching spell that starts with your pattern will be shown. If you do *not* specify a pattern, all matching spells will be shown regardless of name.
 
@@ -23,14 +36,18 @@ Spelly outputs spells in alphabetical order.
 
 Running `//spelly check boost` to see which "boost" spells my WHM still needs to learn:
 
-![](./content/spelly_check.png)
+![](C:\Users\leile\Dropbox\My Documents\Windower4\addons\spelly\content\spelly_check.png)
 
-Spelly "check" commands *only* look at spells that are learnable by your current main/sub job.
+Spelly *only* looks at spells that are learnable by your current main/sub job.
 
 #### Checking for known spells
 
 Running `//spelly known boost` to see which "boost" spells my WHM already knows:
 
-![](./content/spelly_known.png)
+![](C:\Users\leile\Dropbox\My Documents\Windower4\addons\spelly\content\spelly_known.png)
 
-Spelly "known" commands *only* look at spells that are usable by your current main/sub job.
+Spelly *only* looks at spells that are usable by your current main/sub job.
+
+#### Counting known trust spells
+
+You can run `//spelly known -t trust` to see how many trusts you've already learned. Similarly, you can run `//spelly check -t trust` to see how many trusts you have yet to acquire.
