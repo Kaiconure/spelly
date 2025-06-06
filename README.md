@@ -25,7 +25,7 @@ Running `//spelly check boost` to see which "boost" spells my WHM still needs to
 
 ![](./content/spelly_check.png)
 
-Spelly *only* looks at spells that are learnable by your current main/sub job.
+Spelly "check" commands *only* look at spells that are learnable by your current main/sub job.
 
 #### Checking for known spells
 
@@ -33,4 +33,4 @@ Running `//spelly known boost` to see which "boost" spells my WHM already knows:
 
 ![](./content/spelly_known.png)
 
-Spelly *only* looks at spells that are usable by your current main/sub job.
+Spelly "known" commands *only* look at spells that are usable by your current main/sub job.
