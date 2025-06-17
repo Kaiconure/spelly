@@ -9,7 +9,7 @@
 ---------------------------------------------------------------------
 -- This is optional information about the addon, which Windower
 -- will show in the console when loaded.
-ADDON_VERSION    = '1.1.0'
+ADDON_VERSION    = '1.1.1'
 ADDON_NAME       = 'Spelly'
 ADDON_SHORT_NAME = 'spelly'
 ADDON_AUTHOR     = 'Kaiconure'

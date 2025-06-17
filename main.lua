@@ -44,7 +44,7 @@ function spellCheck(check, spellType)
     local known_spells = windower.ffxi.get_spells()
 
     spellType = spellType and string.lower(spellType)
-    check = string.format('^%s', check)
+    check = string.format('^%s', check):lower()
     for id, spell in pairs(resources.spells) do
         local name = string.lower(spell.name)
 
