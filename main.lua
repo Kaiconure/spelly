@@ -28,9 +28,38 @@ function sortSpells(spells)
     end)
 end
 
+function mountCheck(check)
+    local known = {}
+    local unknown = {}
+
+    local abilities = windower.ffxi.get_abilities()
+    local known_mounts = abilities and abilities.mounts or {}
+
+    check = string.format('^%s', check):lower()
+    for id, mount in pairs(resources.mounts) do
+        local name = string.lower(mount.name)
+
+        if string.match(name, check) then
+            if known_mounts[mount.id] then
+                known[#known + 1] = mount
+            else
+                unknown[#unknown + 1] = mount
+            end
+        end
+    end
+
+    return known, unknown
+end
+
 function spellCheck(check, spellType)
     local known = {}
     local unknown = {}
+
+    if type(spellType) == 'string' then
+        if spellType:lower() == 'mount' or spellType:lower() == 'mounts' then
+            return mountCheck(check)
+        end
+    end
 
     local player = windower.ffxi.get_player()
 

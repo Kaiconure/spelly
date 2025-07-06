@@ -21,6 +21,7 @@ The optional *type* argument (specified with either `-type` or `-t` for short)  
 - BlackMagic
 - BlueMagic
 - Geomancy
+- **Mount** *(see the note under Demos below)*
 - Ninjutsu
 - SummonerPact
 - Trust
@@ -51,3 +52,11 @@ Spelly *only* looks at spells that are usable by your current main/sub job.
 #### Counting known trust spells
 
 You can run `//spelly known -t trust` to see how many trusts you've already learned. Similarly, you can run `//spelly check -t trust` to see how many trusts you have yet to acquire.
+
+#### Mounts
+
+By popular demand, I've made Spelly aware of mounts. While not technically spells, they share a very similar use case with checking and learning trust ciphers.
+
+Spelly will *only* look at mounts when you specify a "mount" type. All other commands will work the same (check, known, etc).
+
+You can run `//spelly check -t mount cra` to check if you still need to unlock mounts like *Crawler* or *Crab*. You can run `//spelly known -t mount` to check all the mounts you already know.
